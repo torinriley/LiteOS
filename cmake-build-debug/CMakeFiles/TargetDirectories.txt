@@ -1,0 +1,3 @@
+/Users/torinetheridge/CLionProjects/os/cmake-build-debug/CMakeFiles/MyLightweightOS.dir
+/Users/torinetheridge/CLionProjects/os/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/torinetheridge/CLionProjects/os/cmake-build-debug/CMakeFiles/rebuild_cache.dir
