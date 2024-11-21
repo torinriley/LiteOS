@@ -1,24 +1,22 @@
 ENTRY(kernel_main)
 
-SECTIONS
-{
-    . = 0x100000; /* Kernel loaded at 1MB */
+SECTIONS {
+    . = 0x1000; /* Kernel starts at memory address 0x1000 */
 
     .text : {
-        *(.text) /* Code section */
+        *(.text)       /* Code section */
     }
 
     .rodata : {
-        *(.rodata) /* Read-only data */
+        *(.rodata*)    /* Read-only data section */
     }
 
     .data : {
-        *(.data) /* Initialized data */
+        *(.data)       /* Initialized data section */
     }
 
     .bss : {
-        *(COMMON)
-        *(.bss) /* Uninitialized data */
-        . = ALIGN(4);
+        *(COMMON)      /* Uninitialized data section */
+        *(.bss)
     }
 }
