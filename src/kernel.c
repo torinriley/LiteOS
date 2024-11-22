@@ -1,13 +1,13 @@
+#include <stdint.h>
+
+// VGA text buffer address
+volatile char* video_memory = (volatile char*)0xB8000;
+
 void kernel_main() {
-    char* video_memory = (char*)0xB8000;
-    const char* message = "Kernel Running!";
-    int i = 0;
+    video_memory[0] = 'H'; // Write 'H' at the first character cell
+    video_memory[1] = 0x07; // White text on black background
 
-    while (message[i] != '\0') {
-        video_memory[i * 2] = message[i];
-        video_memory[i * 2 + 1] = 0x07;
-        i++;
+    while (1) {
+        __asm__ __volatile__("hlt");
     }
-
-    while (1) {}
 }
